@@ -1,0 +1,32 @@
+meta {
+  name: Create assistant request
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{endpoint}}openai/assistants?api-version=2024-05-01-preview
+  body: json
+  auth: none
+}
+
+params:query {
+  api-version: 2024-05-01-preview
+}
+
+headers {
+  api-key: {{api-key}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "instructions": "You are an AI assistant that can write code to help answer math questions.",
+    "tools": [
+      {
+        "type": "code_interpreter"
+      }
+    ],
+    "model": "gpt-35-turbo"
+  }
+}

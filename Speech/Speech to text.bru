@@ -1,0 +1,19 @@
+meta {
+  name: Speech to text
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://{{YourServiceRegion}}.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1
+  body: none
+  auth: none
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{Ocp-Apim-Subscription-Key}}
+}
+
+docs {
+  [https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-speech-to-text-short](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-speech-to-text-short)
+}

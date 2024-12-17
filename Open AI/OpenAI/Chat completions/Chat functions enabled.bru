@@ -1,0 +1,57 @@
+meta {
+  name: Chat functions enabled
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{endpoint}}openai/deployments/{{deployment_name}}/chat/completions?api-version={{api_version}}
+  body: json
+  auth: none
+}
+
+params:query {
+  api-version: {{api_version}}
+}
+
+headers {
+  api-key: {{api-key}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "temperature": 0.0,
+    "tool_choice": "required",
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "create_resource",
+          "description": "Call this when the user requests a resource creation",
+          "parameters": { "type": "object", "properties": {} },
+          "required": []
+        }
+      }
+    ],
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a helpful assistnat"
+      },
+      {
+        "role": "system",
+        "content": "Datetime is October 10th 2024"
+      },
+      {
+        "role": "system",
+        "content": "Make responses using markdown file format."
+      },
+      {
+        "role": "assistant",
+        "content": "Hi, there I'm a ai assistnat?"
+      },
+      { "role": "user", "content": "Create a task for 2h" }
+    ]
+  }
+}

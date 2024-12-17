@@ -1,0 +1,25 @@
+meta {
+  name: Get models still on training
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{endpoint}}speechtotext/v3.2-preview.2/models?skip=0&top=2&filter=status%20eq%20'Running'
+  body: none
+  auth: none
+}
+
+params:query {
+  skip: 0
+  top: 2
+  filter: status eq 'Running'
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{Ocp-Apim-Subscription-Key}}
+}
+
+docs {
+  [https://learn.microsoft.com/en-us/rest/api/speechtotext/models/list-custom-models?view=rest-speechtotext-v3.2-preview.2&tabs=HTTP#get-all-models-in-state-'running'](https://learn.microsoft.com/en-us/rest/api/speechtotext/models/list-custom-models?view=rest-speechtotext-v3.2-preview.2&tabs=HTTP#get-all-models-in-state-'running')
+}

@@ -1,0 +1,24 @@
+meta {
+  name: Get transcription status
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://{{YourServiceRegion}}.api.cognitive.microsoft.com/speechtotext/v3.2/transcriptions/{{YourTranscriptionId}}
+  body: none
+  auth: none
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{Ocp-Apim-Subscription-Key}}
+}
+
+docs {
+    body of the response
+    "links": {
+      "files": ""
+    },
+    
+    contains the id of the batch job
+}

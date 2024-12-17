@@ -1,0 +1,34 @@
+meta {
+  name: Translate document
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{endpoint}}translator/text/batch/v1.1/batches
+  body: json
+  auth: none
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{Ocp-Apim-Subscription-Key}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "inputs": [
+      {
+        "source": {
+          "sourceUrl": "https://testvirtualangstor.blob.core.windows.net/source-container"
+        },
+        "targets": [
+          {
+            "targetUrl": "https://testvirtualangstor.blob.core.windows.net/target-container",
+            "language": "fr"
+          }
+        ]
+      }
+    ]
+  }
+}

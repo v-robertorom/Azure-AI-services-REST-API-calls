@@ -1,0 +1,19 @@
+meta {
+  name: Get list of content filter
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://management.azure.com/subscriptions/{{subscriptionId}}/providers/Microsoft.CognitiveServices/locations/{{location}}/raiContentFilters/{{filterName}}?api-version=2024-06-01-preview
+  body: none
+  auth: bearer
+}
+
+params:query {
+  api-version: 2024-06-01-preview
+}
+
+headers {
+  Content-Type: application/json
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Get assistants
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{endpoint}}openai/assistants?api-version=2024-05-01-preview
+  body: none
+  auth: none
+}
+
+params:query {
+  api-version: 2024-05-01-preview
+}
+
+headers {
+  api-key: fafae15803c841809779cc7030e5567c
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Get transcription results
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://{{YourServiceRegion}}.api.cognitive.microsoft.com/speechtotext/v3.2/transcriptions/{{YourTranscriptionId}}/files
+  body: none
+  auth: none
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{Ocp-Apim-Subscription-Key}}
+}

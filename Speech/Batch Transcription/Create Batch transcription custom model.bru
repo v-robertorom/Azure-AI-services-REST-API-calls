@@ -1,0 +1,33 @@
+meta {
+  name: Create Batch transcription custom model
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://{{YourServiceRegion}}.api.cognitive.microsoft.com/speechtotext/v3.2/transcriptions
+  body: json
+  auth: none
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{Ocp-Apim-Subscription-Key}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "contentUrls": [
+      "https://crbn.us/hello.wav",
+      "https://crbn.us/whatstheweatherlike.wav"
+    ],
+    "locale": "en-US",
+    "displayName": "My Transcription",
+    "model": {
+      "self": "https://westeurope.api.cognitive.microsoft.com/speechtotext/v3.2/models/base/e0986a69-17c0-4510-b721-39f83f02332a"
+    },
+    "properties": {
+      "wordLevelTimestampsEnabled": true
+    }
+  }
+}

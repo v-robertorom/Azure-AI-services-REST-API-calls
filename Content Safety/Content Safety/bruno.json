@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Content Safety",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

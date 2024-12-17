@@ -1,0 +1,15 @@
+meta {
+  name: Delete batch transcription
+  type: http
+  seq: 4
+}
+
+delete {
+  url: https://{{YourServiceRegion}}.api.cognitive.microsoft.com/speechtotext/v3.2/transcriptions/{{YourTranscriptionId}}
+  body: none
+  auth: none
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{Ocp-Apim-Subscription-Key}}
+}

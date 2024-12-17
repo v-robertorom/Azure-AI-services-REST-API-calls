@@ -1,0 +1,26 @@
+meta {
+  name: Analyze text content
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{endpoint}}contentsafety/text:analyze?api-version=2023-04-30-preview
+  body: json
+  auth: none
+}
+
+params:query {
+  api-version: 2023-04-30-preview
+}
+
+headers {
+  Content-Type: application/json
+  Ocp-Apim-Subscription-Key: {{Ocp-Apim-Subscription-Key}}
+}
+
+body:json {
+  {
+    "text": "This is text example"
+  }
+}

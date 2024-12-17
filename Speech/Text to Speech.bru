@@ -1,0 +1,23 @@
+meta {
+  name: Text to Speech
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://{{YourServiceRegion}}.tts.speech.microsoft.com/cognitiveservices/v1
+  body: xml
+  auth: none
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{Ocp-Apim-Subscription-Key}}
+  Content-Type: application/ssml+xml
+  X-Microsoft-OutputFormat: audio-16khz-128kbitrate-mono-mp3
+}
+
+body:xml {
+  <speak version="1.0" xml:lang="en-US">
+      <voice xml:lang="en-US" xml:gender="Female" name="en-US-AvaMultilingualNeural">my voice is my passport verify me</voice>
+  </speak>
+}

@@ -1,0 +1,34 @@
+meta {
+  name: Chat completitions
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{endpoint}}openai/deployments/{{deployment_name}}/chat/completions?api-version=2024-02-01
+  body: json
+  auth: none
+}
+
+params:query {
+  api-version: 2024-02-01
+}
+
+headers {
+  api-key: {{api-key}}
+}
+
+body:json {
+  {
+     "messages": [
+         {
+             "role": "system",
+             "content": "You are a helpful assistant."
+         },
+         {
+             "role": "user",
+             "content": "Which gpt model do you use?"
+         }
+     ]
+  }
+}

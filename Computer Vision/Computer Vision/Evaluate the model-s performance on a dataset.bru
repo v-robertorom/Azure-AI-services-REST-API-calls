@@ -1,0 +1,28 @@
+meta {
+  name: Evaluate the model-s performance on a dataset
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{endpoint}}/computervision/models/{{model-name}}/evaluations/{{eval-name}}?api-version=2023-02-01-preview
+  body: json
+  auth: none
+}
+
+params:query {
+  api-version: 2023-02-01-preview
+}
+
+headers {
+  Content-Type: application/json
+  Ocp-Apim-Subscription-Key: {{Ocp-Apim-Subscription-Key}}
+}
+
+body:json {
+  {
+    "evaluationParameters": {
+      "testDatasetName": "contosodatasettest"
+    }
+  }
+}

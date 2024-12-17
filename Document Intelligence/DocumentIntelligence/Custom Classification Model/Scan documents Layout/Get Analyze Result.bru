@@ -1,0 +1,25 @@
+meta {
+  name: Get Analyze Result
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{endpoint}}documentintelligence/documentModels/prebuilt-layout/analyzeResults/{{resultId}}?api-version=2024-07-31-preview
+  body: json
+  auth: none
+}
+
+params:query {
+  api-version: 2024-07-31-preview
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{Ocp-Apim-Subscription-Key}}
+}
+
+docs {
+  [https://learn.microsoft.com/en-us/rest/api/aiservices/document-models/get-analyze-result?view=rest-aiservices-v4.0%20(2024-07-31-preview)&tabs=HTTP](https://learn.microsoft.com/en-us/rest/api/aiservices/document-models/get-analyze-result?view=rest-aiservices-v4.0%20(2024-07-31-preview)&tabs=HTTP)
+  
+  modelID for this request **prebuilt-layout**
+}

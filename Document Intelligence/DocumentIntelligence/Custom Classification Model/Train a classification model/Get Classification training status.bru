@@ -1,0 +1,25 @@
+meta {
+  name: Get Classification training status
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{endpoint}}documentintelligence/operations/{{OperationID}}?_overload=getDocumentClassifierBuildOperation&api-version=2024-07-31-preview
+  body: none
+  auth: none
+}
+
+params:query {
+  _overload: getDocumentClassifierBuildOperation
+  api-version: 2024-07-31-preview
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{Ocp-Apim-Subscription-Key}}
+}
+
+docs {
+  
+  [https://learn.microsoft.com/en-us/rest/api/aiservices/miscellaneous-operations/get-document-classifier-build-operation?view=rest-aiservices-v4.0%20(2024-07-31-preview)&tabs=HTTP](https://learn.microsoft.com/en-us/rest/api/aiservices/miscellaneous-operations/get-document-classifier-build-operation?view=rest-aiservices-v4.0%20(2024-07-31-preview)&tabs=HTTP)
+}

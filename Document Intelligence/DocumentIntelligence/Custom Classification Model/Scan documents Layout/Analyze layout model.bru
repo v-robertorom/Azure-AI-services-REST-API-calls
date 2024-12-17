@@ -1,0 +1,32 @@
+meta {
+  name: Analyze layout model
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{endpoint}}documentintelligence/documentModels/prebuilt-layout:analyze?_overload=analyzeDocument&api-version=2024-07-31-preview
+  body: json
+  auth: none
+}
+
+params:query {
+  _overload: analyzeDocument
+  api-version: 2024-07-31-preview
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{Ocp-Apim-Subscription-Key}}
+}
+
+body:json {
+  {
+    "urlSource": "https://finaltestwestustr.blob.core.windows.net/training/report/receipt_1.pdf?sp=racwdyt&st=2024-11-12T16:08:29Z&se=2024-11-13T00:08:29Z&skoid=3ed05cd2-a65e-4cdb-9ef8-9a5451f47e16&sktid=16b3c013-d300-468d-ac64-7eda0820b6d3&skt=2024-11-12T16:08:29Z&ske=2024-11-13T00:08:29Z&sks=b&skv=2022-11-02&spr=https&sv=2022-11-02&sr=b&sig=ykV0IphAxcXtl34C9YgO34DRbY4p%2FaSe9STKFHQUYMQ%3D"
+  }
+}
+
+docs {
+  [https://learn.microsoft.com/en-us/rest/api/aiservices/document-models/analyze-document?view=rest-aiservices-v4.0%20(2024-07-31-preview)&viewFallbackFrom=rest-aiservices-2023-07-31&preserve-view=true&tabs=HTTP](https://learn.microsoft.com/en-us/rest/api/aiservices/document-models/analyze-document?view=rest-aiservices-v4.0%20(2024-07-31-preview)&viewFallbackFrom=rest-aiservices-2023-07-31&preserve-view=true&tabs=HTTP)
+  
+  modelID for this request **prebuilt-layout**
+}

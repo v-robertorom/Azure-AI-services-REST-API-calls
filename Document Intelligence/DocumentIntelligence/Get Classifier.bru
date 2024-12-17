@@ -1,0 +1,19 @@
+meta {
+  name: Get Classifier
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{endpoint}}documentintelligence/documentClassifiers/{{classifierId}}?api-version=2024-07-31-preview
+  body: none
+  auth: none
+}
+
+params:query {
+  api-version: 2024-07-31-preview
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{Ocp-Apim-Subscription-Key}}
+}

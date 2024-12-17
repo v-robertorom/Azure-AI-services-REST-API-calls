@@ -1,0 +1,19 @@
+meta {
+  name: Get list of deployed models
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{endpoint}}speechtotext/v3.2-preview.2/models
+  body: none
+  auth: none
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{Ocp-Apim-Subscription-Key}}
+}
+
+docs {
+  [https://learn.microsoft.com/en-us/rest/api/speechtotext/models/list-custom-models?view=rest-speechtotext-v3.2-preview.2&tabs=HTTP#get-all-models-in-state-'running'](https://learn.microsoft.com/en-us/rest/api/speechtotext/models/list-custom-models?view=rest-speechtotext-v3.2-preview.2&tabs=HTTP#get-all-models-in-state-'running')
+}

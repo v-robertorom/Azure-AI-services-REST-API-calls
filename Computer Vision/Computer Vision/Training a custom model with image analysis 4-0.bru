@@ -1,0 +1,30 @@
+meta {
+  name: Training a custom model with image analysis 4-0
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{endpoint}}/computervision/models/{{new-model-name}}?api-version=2023-02-01-preview
+  body: json
+  auth: none
+}
+
+params:query {
+  api-version: 2023-02-01-preview
+}
+
+headers {
+  Content-Type: application/json
+  Ocp-Apim-Subscription-Key: {{Ocp-Apim-Subscription-Key}}
+}
+
+body:json {
+  {
+  "trainingParameters": {
+      "trainingDatasetName":"contosodataset",
+      "timeBudgetInHours": 1,
+      "modelKind":"Generic-Classifier"
+      }
+  }
+}

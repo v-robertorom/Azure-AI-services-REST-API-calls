@@ -1,0 +1,21 @@
+meta {
+  name: Get list of jobs
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{endpoint}}translator/document/batches?api-version=2024-05-01
+  body: none
+  auth: none
+}
+
+params:query {
+  api-version: 2024-05-01
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{Ocp-Apim-Subscription-Key}}
+  Ocp-Apim-Subscription-Region: {{Ocp-Apim-Subscription-Region}}
+  Content-Type: application/json
+}

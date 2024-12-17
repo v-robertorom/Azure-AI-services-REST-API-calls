@@ -1,0 +1,36 @@
+meta {
+  name: Modify assistants
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{endpoint}}openai/assistants/{{assistant_id}}?api-version=2024-05-01-preview
+  body: json
+  auth: none
+}
+
+params:query {
+  api-version: 2024-05-01-preview
+}
+
+headers {
+  api-key: {{api-key}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "instructions": "You are an HR bot, and you have access to files to answer employee questions about company policies. Always response with info from either of the files.",
+    "tools": [
+      {
+        "type": "file-search"
+      }
+    ],
+    "model": "gpt-35-turbo",
+    "file_ids": [
+      "assistant-abc123",
+      "assistant-abc456"
+    ]
+  }
+}

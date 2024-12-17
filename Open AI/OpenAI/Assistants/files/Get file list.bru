@@ -1,0 +1,19 @@
+meta {
+  name: Get file list
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{endpoint}}openai/files?api-version=2024-05-01-preview
+  body: none
+  auth: none
+}
+
+params:query {
+  api-version: 2024-05-01-preview
+}
+
+headers {
+  api-key: {{api-key}}
+}

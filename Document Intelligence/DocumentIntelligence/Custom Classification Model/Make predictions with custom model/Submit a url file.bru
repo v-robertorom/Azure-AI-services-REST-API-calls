@@ -1,0 +1,31 @@
+meta {
+  name: Submit a url file
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{endpoint}}documentintelligence/documentClassifiers/{{modelId}}:analyze?_overload=classifyDocument&api-version=2024-02-29-preview
+  body: json
+  auth: none
+}
+
+params:query {
+  _overload: classifyDocument
+  api-version: 2024-02-29-preview
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{Ocp-Apim-Subscription-Key}}
+}
+
+body:json {
+  {
+    "urlSource": "https://finaltestwestustr.blob.core.windows.net/training/invoice/fake_invoice_1.xlsx?sp=racwdyt&st=2024-11-09T01:44:18Z&se=2024-11-09T09:44:18Z&skoid=3ed05cd2-a65e-4cdb-9ef8-9a5451f47e16&sktid=16b3c013-d300-468d-ac64-7eda0820b6d3&skt=2024-11-09T01:44:18Z&ske=2024-11-09T09:44:18Z&sks=b&skv=2022-11-02&spr=https&sv=2022-11-02&sr=b&sig=Cprt57awMVutfwYHOZrbrZ%2F7zWY0S3HvoODQZDXy%2BOE%3D"
+  }
+  
+}
+
+docs {
+  [https://learn.microsoft.com/en-us/rest/api/aiservices/document-classifiers/classify-document?view=rest-aiservices-v4.0%20(2024-07-31-preview)&tabs=HTTP](https://learn.microsoft.com/en-us/rest/api/aiservices/document-classifiers/classify-document?view=rest-aiservices-v4.0%20(2024-07-31-preview)&tabs=HTTP)
+}
